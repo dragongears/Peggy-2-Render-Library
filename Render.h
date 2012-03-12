@@ -25,7 +25,11 @@
 #define Render_h
 
 #include <inttypes.h>
-#include <wiring.h>
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#else
+#include "WProgram.h"
+#endif
 
 enum render_format_t {RENDER_DRAW, RENDER_ERASE, RENDER_XOR};
 
